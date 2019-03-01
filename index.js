@@ -11,15 +11,11 @@ const states = {
 let  relevantEvents = new Array();
 
 //OPTIONAL: replace with "amzn1.ask.skill.[your-unique-value-here]";
-const APP_ID = 'amzn1.ask.skill.c56a674a-8f39-4ac9-b49e-ba6c28bd4b09';
+
 
 var URL = '';
 
-// URL to get the .ics from, in this instance we are getting from Stanford however this can be changed
-// const URL = "http://events.stanford.edu/eventlist.ics";
- // const URL1 = 'https://s3.amazonaws.com/calendaralexaapp/mainlist-holidays.ics';
-  //  const URL = 'https://s3.amazonaws.com/calendaralexaapp/USCalendar-FIFA.ics';
-// Skills name
+
 const skillName = "Sports list Calendar:";
 
 // Message when the skill is first called
@@ -104,7 +100,7 @@ const newSessionHandlers = {
     },
 
        'Bevent': function () {
-       URL = 'https://s3.amazonaws.com/calendaralexaapp/NFL-primetime.ics';
+       URL = ' calendar url';
          this.response.speak("Ok. NFL Games. You can ask for the events today. Search for events by date. or say help. What would you like?").listen();
         this.handler.state = states.SEARCHMODE;
         this.emit(':responseReady');
@@ -112,7 +108,7 @@ const newSessionHandlers = {
 
 
       'Cevent': function () {
-       URL = 'https://s3.amazonaws.com/calendaralexaapp/IPL-schedule.ics';
+       URL = 'calendar url';
          this.response.speak("Ok. IPL Games. You can ask for the events today. Search for events by date. or say help. What would you like?").listen();
         this.handler.state = states.SEARCHMODE;
         this.emit(':responseReady');
@@ -175,7 +171,7 @@ const startSearchHandlers = Alexa.CreateStateHandler(states.SEARCHMODE, {
         this.emit(':responseReady');
     },
      'Cevent': function () {
-       URL = 'https://s3.amazonaws.com/calendaralexaapp/IPL-schedule.ics';
+       URL = 'calendar url';
    //     this.handler.state = states.SEARCHMODE;
          this.response.speak("Ok. IPL Games. IPL games are in the month of April, May and June. You can ask for the events today. Search for events by date. or say help. What would you like?").listen();
         this.emit(':responseReady');
